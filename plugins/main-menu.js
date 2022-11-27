@@ -149,7 +149,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
     
-     conn.sendHydrated2(m.chat, text.trim(), 'DNL ᴮᴼᵀ', pp, fgyt,  ' ',' ' , ' ', ' ', m)  
+     conn.sendHydrated2(m.chat, text.trim(), 'DNL ᴮᴼᵀ', pp , m)  
     /*conn.sendButton(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, [
       ['ꨄ︎ Apoyar', `${_p}donate`],
       ['⏍ Info', `${_p}botinfo`],
