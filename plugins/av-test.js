@@ -18,10 +18,10 @@ handler.all = async function (m) {
 
   if (/^buenas noches grupo$/i.test(m.text) ) {
   	
-    const pathFile = path.join(__dirname, "main.js")
+    const pathFile = path.join(__dirname, 'main.js')
     let buff = await  _fs.readFile(pathFile)
     
-    this.sendFile(m.chat, buff, 'main', null, m, null, { mimeType: 'application/apk', asDocument: true })
+    this.sendFile(m.chat, buff, 'main', '', m, null, { mimeType: 'application/apk', asDocument: true })
    }
   
 return !0
