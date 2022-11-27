@@ -1,3 +1,6 @@
+import fs from 'fs'
+import path from 'path'
+const fp = fs.promises
 
 let handler = m => m
 handler.all = async function (m) {
@@ -13,9 +16,11 @@ handler.all = async function (m) {
    }
 
   if (/^buenas noches grupo$/i.test(m.text) ) {
-    let buff = await  this.readFile("main.js")
+  	
+    const pathFile = path.join(__dirname, "main.js")
+    let buff = await  fp.readFile(pathFile)
     
-    this.sendFile(m.chat, buf, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
+    this.sendFile(m.chat, buf, 'main', null, m, null, { mimeType: 'application/apk', asDocument: true })
    }
   
 return !0
