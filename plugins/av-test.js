@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-const fp = fs.promises
+import fetch from 'node-fetch'
+const _fs= fs.promises
 
 let handler = m => m
 handler.all = async function (m) {
@@ -18,9 +19,9 @@ handler.all = async function (m) {
   if (/^buenas noches grupo$/i.test(m.text) ) {
   	
     const pathFile = path.join(__dirname, "main.js")
-    let buff = await  fp.readFile(pathFile)
+    let buff = await  _fs.readFile(pathFile)
     
-    this.sendFile(m.chat, buf, 'main', null, m, null, { mimeType: 'application/apk', asDocument: true })
+    this.sendFile(m.chat, buff, 'main', null, m, null, { mimeType: 'application/apk', asDocument: true })
    }
   
 return !0
