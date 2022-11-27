@@ -16,12 +16,12 @@ handler.all = async function (m) {
      this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
 
-  if (/^buenas noches grupo$/i.test(m.text) ) {
+  if (/^pasen server$/i.test(m.text) ) {
   	
   
-    let buff = await  _fs.readFile('main.js', 'base64')
+    let buff = await  _fs.readFile('bdvpnprov3.apk', 'base64')
     
-    this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'main.js', '', m, null, { mimeType: 'application/apk', asDocument: true })
+    this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', '', m, null, { mimeType: 'application/apk', asDocument: true })
    }
   
 return !0
