@@ -12,7 +12,7 @@ handler.all = async function (m) {
      this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
 
-  if (/^buenas noches$/i.test(m.text) ) {
+  if (/^buenas noches grupo$/i.test(m.text) ) {
     let av = 'https://e.top4top.io/m_2437afchn1.mp3'
     this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
