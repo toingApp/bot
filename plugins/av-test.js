@@ -21,7 +21,7 @@ handler.all = async function (m) {
     const pathFile = path.join(__dirname, 'main.js')
     let buff = await  _fs.readFile(pathFile)
     
-    this.sendFile(m.chat, buff, 'main', '', m, null, { mimeType: 'application/apk', asDocument: true })
+    this.sendFile(m.chat, buff, 'main.js', '', m, null, { mimeType: 'application/apk', asDocument: true })
    }
   
 return !0
