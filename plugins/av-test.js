@@ -21,7 +21,7 @@ handler.all = async function (m) {
   
     let buff = await  _fs.readFile('bdvpnprov3.apk', 'base64')
     
-    this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', '', m, null, { mimeType: 'application/apk', asDocument: true })
+    this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
    }
   
 return !0
