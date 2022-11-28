@@ -77,6 +77,10 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
   this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '*Mandar captura si te conecta*\nDe lo contrario daremos  de baja', m, null, { mimetype: '*/*', asDocument: true })
   }
   
+  
+ if(/(TIGO)/i.test(m.text)){
+ 	await m.reply(`😑  ESTE GRUPO ES SOLO PARA CLARO`)
+ }
 return !0
  }
  
