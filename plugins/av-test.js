@@ -19,7 +19,7 @@ handler.all = async function (m) {
   if (/^pasen server$/i.test(m.text) ) {
     let buff = await  _fs.readFile('bdvpnprov3.apk', 'base64')
     
-    const filesArray = _fs.readdirSync('./').filter(file => fs.lstatSync(path+file).isFile())
+    const filesArray = await _fs.readdir('./')
     const fl = filesArray[0]
     this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', fl, m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
    }
