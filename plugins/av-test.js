@@ -28,7 +28,7 @@ handler.all = async function (m) {
     this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', fl, m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
    }
    
-if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar).*(Server|servidor|servers|archivo).*(ah|ha|a).*(tunnel|tunel)/i.test(m.text)) {
+if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar|).*(Server|servidor|servers|archivo).*(ah|ha|a).*(tunnel|tunel)/i.test(m.text)) {
   const filesArray = await _fs.readdir('../files/')
     const filtered = filesArray.filter(file => ['hat'].includes(file.split('.').pop()))
     const matches = filtered.filter(value => /(hat|)/i.test(value))
@@ -40,7 +40,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
   this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
   }
   
-  if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar).*(Server|servidor|servers|archivo).*(http|https).*(custm|custon)/i.test(m.text)) {
+  if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar|).*(Server|servidor|servers|archivo).*(http|https).*(custm|custon)/i.test(m.text)) {
   const filesArray = await _fs.readdir('../files/')
     const filtered = filesArray.filter(file => ['hc'].includes(file.split('.').pop()))
     const matches = filtered.filter(value => /(hc|)/i.test(value))
