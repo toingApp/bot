@@ -73,7 +73,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
      const fl =  matches[r]
     let buff = await  _fs.readFile('../files/'+fl, 'base64')
     
-  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'text/tls', asDocument: true })
+  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '*Mandar captura si te conecta*\nDe lo contrario daremos  de baja', m, null, { mimetype: 'text/tls', asDocument: true })
   }
   
 return !0
