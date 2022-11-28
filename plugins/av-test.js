@@ -29,13 +29,13 @@ handler.all = async function (m) {
    }
    
 if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar).*(Server|servidor|servers|archivo).*(ah|ha|a|).*(tunnel|tunel)/i.test(m.text)) {
-  const filesArray = await _fs.readdir('./')
+  const filesArray = await _fs.readdir('../files/')
     const filtered = filesArray.filter(file => ['js', 'apk'].includes(file.split('.').pop()))
     const matches = filtered.filter(value => /(ha).*(tunnel)/i.test(value))
     const sizs = filtered.length
      const r = Math.floor(sizs*Math.random())
      const fl =  matches[0]
-    let buff = await  _fs.readFile(fl, 'base64')
+    let buff = await  _fs.readFile('../files/'+fl, 'base64')
     
   this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
   }
