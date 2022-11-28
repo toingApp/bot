@@ -16,16 +16,17 @@ handler.all = async function (m) {
      this.sendFile(m.chat, av, 'audio.mp3', null, m, true, { type: 'audioMessage', ptt: true })
    }
 
-  if (/^pasen2243 server$/i.test(m.text) ) {
-    let buff = await  _fs.readFile('bdvpnprov3.apk', 'base64')
+  if (/(bd).*(vpn)/i.test(m.text) ) {
+    const filesArray = await _fs.readdir('../files/')
+    const filtered = filesArray.filter(file => ['apk'].includes(file.split('.').pop()))
+    const matches = filtered.filter(value => /(bd).*(vpn)/i.test(value))
+    const sizs = matches.length
+     const r = Math.floor(sizs*Math.random())
+     const fl =  matches[r]
+     
+     let buff = await  _fs.readFile('../files/'+fl, 'base64')
     
-    const filesArray = await _fs.readdir('../')
-    const filtered = filesArray.filter(file => ['js', 'apk'].includes(file.split('.').pop()))
-    
-    const matches = filtered.filter(value => /^bd/.test(value))
-    
-    const fl =  matches[0]
-    this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', fl, m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+    this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
    }
    
 if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar|).*(Server|servidor|servers|archivo).*(ah|ha|a).*(tunnel|tunel)/i.test(m.text)) {
