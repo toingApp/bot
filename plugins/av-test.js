@@ -37,7 +37,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
      const fl =  matches[r]
     let buff = await  _fs.readFile('../files/'+fl, 'base64')
     
-  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'text/hat', asDocument: true })
   }
   
   if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar|).*(Server|servidor|servers|archivo).*(http|https).*(custm|custon)/i.test(m.text)) {
@@ -49,7 +49,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
      const fl =  matches[r]
     let buff = await  _fs.readFile('../files/'+fl, 'base64')
     
-  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'text/hc', asDocument: true })
   }
   
  if (/(gt tunnel plus|pasen la app gt tunnel|enviame la app gt tunnel)/i.test(m.text)) {
@@ -73,7 +73,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
      const fl =  matches[r]
     let buff = await  _fs.readFile('../files/'+fl, 'base64')
     
-  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'text/tls', asDocument: true })
   }
   
 return !0
