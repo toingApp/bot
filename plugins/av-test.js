@@ -34,7 +34,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
     const matches = filtered.filter(value => /(ha).*(tunnel)/i.test(value))
     const sizs = filtered.length
      const r = Math.floor(sizs*Math.random())
-     const fl =  matches[r]
+     const fl =  matches[0]
     let buff = await  _fs.readFile(fl, 'base64')
     
   this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
