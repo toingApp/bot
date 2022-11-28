@@ -52,7 +52,7 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
   this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'text/hc', asDocument: true })
   }
   
- if (/(gt tunnel plus|pasen la app gt tunnel|enviame la app gt tunnel)/i.test(m.text)) {
+ if (/(gt tunnel plus|pasen la app gt tunnel|enviame la app gt tunnel|gt tunnel)/i.test(m.text)) {
   const filesArray = await _fs.readdir('../files/')
     const filtered = filesArray.filter(file => ['apk'].includes(file.split('.').pop()))
     const matches = filtered.filter(value => /(gt).*(tunnel).*(plus|)/i.test(value))
