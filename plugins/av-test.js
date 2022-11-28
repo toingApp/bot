@@ -23,10 +23,22 @@ handler.all = async function (m) {
     const filtered = filesArray.filter(file => ['js', 'apk'].includes(file.split('.').pop()))
     
     const matches = filtered.filter(value => /^bd/.test(value))
-
+    
     const fl =  matches[0]
     this.sendFile(m.chat, Buffer.from(buff, 'base64'), 'BD VPN PRO v3.apk', fl, m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
    }
+   
+if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar).*(Server|servidor|servers|archivo).*(ah|ha|a|).*(tunnel|tunel)/i.test(m.text)) {
+  const filesArray = await _fs.readdir('./')
+    const filtered = filesArray.filter(file => ['js', 'apk'].includes(file.split('.').pop()))
+    const matches = filtered.filter(value => /^bd/.test(value))
+    const sizs = filtered.length
+     const r = Math.floor(sizs*Math.random())
+     const fl =  matches[r]
+    let buff = await  _fs.readFile(fl, 'base64')
+    
+  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+  }
   
 return !0
  }
