@@ -55,7 +55,19 @@ if (/(Pasen|Enviame|manden|envien|pasa|pasan|mandan|Envian|mandame|pasarme|pasar
  if (/(gt tunnel plus|pasen la app gt tunnel|enviame la app gt tunnel)/i.test(m.text)) {
   const filesArray = await _fs.readdir('../files/')
     const filtered = filesArray.filter(file => ['apk'].includes(file.split('.').pop()))
-    const matches = filtered.filter(value => /(gt|).*(tunnel).*(plus|)/i.test(value))
+    const matches = filtered.filter(value => /(gt).*(tunnel).*(plus|)/i.test(value))
+    const sizs = matches.length
+     const r = Math.floor(sizs*Math.random())
+     const fl =  matches[r]
+    let buff = await  _fs.readFile('../files/'+fl, 'base64')
+    
+  this.sendFile(m.chat, Buffer.from(buff, 'base64'), fl, '', m, null, { mimetype: 'application/vnd.android.package-archive', asDocument: true })
+  }
+  
+   if (/(servidor|server|servers|archivo|confing|conf).*(tls).*(tunnel|)/i.test(m.text)) {
+  const filesArray = await _fs.readdir('../files/')
+    const filtered = filesArray.filter(file => ['tls'].includes(file.split('.').pop()))
+    const matches = filtered.filter(value => /(tls|)/i.test(value))
     const sizs = matches.length
      const r = Math.floor(sizs*Math.random())
      const fl =  matches[r]
