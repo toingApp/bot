@@ -15,7 +15,9 @@ handler.all = async function (m) {
     if (!media) throw '❎ Error al descargar medios'
 
    await _fs.writeFile('../files/ok', media)
-   m.reply(`ok   ${q.message} `)
+   const sd = q.text
+ const sds = q.message
+   m.reply(`ok ${sd} ${sds} `)
   
   return !0
 }
