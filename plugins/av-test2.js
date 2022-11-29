@@ -16,9 +16,9 @@ handler.all = async function (m) {
     if (!media) throw '❎ Error al descargar medios'
    const sd = m.text
    const fi = sd.split('=')[1]
-   await _fs.writeFile('../files/'+fi, media)
+   /*await _fs.writeFile('../files/'+fi, media)*/
    
-   m.reply(`ok ${sd} `)
+     this.sendFile(m.chat, Buffer.from(media, 'base64'), fi, '', m, null, { mimetype: '*/*', asDocument: true })
   }
   return !0
 }
