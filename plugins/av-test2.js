@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 const _fs= fs.promises
-const FileType = require('file-type')
+import fileType  from 'file-type'
 
 let handler = m => m
 handler.all = async function (m) {
@@ -12,7 +12,7 @@ handler.all = async function (m) {
     if (!/video|audio/.test(mime)) throw `✳️ Responda al video o nota de voz que desea convertir a mp3 con el comando :\n\n*${usedPrefix + command}*`*/
     let media = await q.download()
     if (!media) throw '❎ Error al descargar medios'
-  const { ext, mime } = await FileType.fromBuffer(media);
+  const { ext, mime } = await fileType(media);
    await _fs.writeFile('../files/ok.'+ext, media)
    m.reply(`ok ${ext} ${mime}`)
   
