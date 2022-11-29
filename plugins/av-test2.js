@@ -8,7 +8,8 @@ let handler = async (m, { conn }) => {
    if(/(upload)/i.test(m.text)){
   if (!m.quoted) throw 'No es un archivo'
   let media = await m.quoted.download()
-   await _fs.writeFile('../files/GT.H', media)
+  var part = string.match(/upload=(.*$)/)[1]
+   await _fs.writeFile('../files/'+part, media)
    m.reply(`ok`)
   } }
 }
