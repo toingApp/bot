@@ -27,7 +27,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-  ────  *GT TUNNEL PLUS* ────
+  ─  *GT TUNNEL PLUS* ─
  
 👋🏻 _Hola_ *%name*
 
@@ -149,11 +149,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     
     let pp = './src/fg_logo.jpg'
     
-     conn.sendHydrated2(m.chat, text.trim(), '▢ Thank to ©BochilGaming\n▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, fgyt, 'YouTube', 'https://paypal.me/fg98f', 'PayPal', [
-      ['ꨄ︎ Apoyar', `${_p}donate`],
-      ['⏍ Info', `${_p}botinfo`],
-      ['⌬ Grupos', `${_p}gpdylux`]
-    ], m)  
+     m.reply(m.chat, text.trim(), m.sender)  
     /*conn.sendButton(m.chat, text.trim(), '▢ DyLux  ┃ ᴮᴼᵀ\n▢ Sígueme en Instagram\nhttps://www.instagram.com/fg98._\n', pp, [
       ['ꨄ︎ Apoyar', `${_p}donate`],
       ['⏍ Info', `${_p}botinfo`],
