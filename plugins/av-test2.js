@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import fetch from 'node-fetch'
 const _fs= fs.promises
 
 let handler = async (m, { conn }) => {
