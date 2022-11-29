@@ -1,6 +1,5 @@
 import fs from 'fs'
 import path from 'path'
-import { fileTypeFromBuffer } from 'file-type'
 const _fs= fs.promises
 
 
