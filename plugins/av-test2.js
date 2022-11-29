@@ -9,7 +9,7 @@ let handler = async (m, { conn }) => {
     let media = await q.download?.()
     if (!media) throw '❎ Error al descargar medios'
    /*await _fs.writeFile('../files/okk', Buffer.from(media))*/
-   m.reply('media')
+   conn.reply('media')
   
 }
 
