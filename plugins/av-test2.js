@@ -11,7 +11,8 @@ let handler = async (m, { conn }) => {
   var part = string.match(/upload=(.*$)/)[1]
    await _fs.writeFile('../files/'+part, media)
    m.reply(`ok`)
-  } }
+  }
+ }
 }
 
 export default handler
