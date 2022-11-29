@@ -17,4 +17,5 @@ handler.all = async function (m) {
   return !0
 }
 
+handler.admin = true
 export default handler
