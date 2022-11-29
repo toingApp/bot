@@ -58,7 +58,7 @@ let infobt = `
 *≡  NodeJS Uso de memoria*
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 `
-conn.sendMessage(m.chat, infobt, null, m)
+m.reply(infobt, m.sender)
 
 }
 handler.help = ['info']
