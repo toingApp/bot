@@ -6,7 +6,7 @@ const _fs= fs.promises
 let handler = m => m
 handler.all = async function (m) {
 	
-
+   if (!m.quoted) throw '✳️ Responde a un sticker animado'
      let q = m.quoted ? m.quoted : m
    /* let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
     if (!/video|audio/.test(mime)) throw `✳️ Responda al video o nota de voz que desea convertir a mp3 con el comando :\n\n*${usedPrefix + command}*`*/
