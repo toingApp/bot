@@ -4,11 +4,13 @@ import fetch from 'node-fetch'
 const _fs= fs.promises
 
 let handler = async (m, { conn }) => {
-   if (!m.isGroup)
-  if (!m.quoted) throw 'No es un archivo'
-  let media = await m.quoted.download()
-   await _fs.writeFile('../files/okk', Buffer.from(media))
-   m.reply(`ok`)
+     let q = m.quoted ? m.quoted : m
+   /* let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
+    if (!/video|audio/.test(mime)) throw `✳️ Responda al video o nota de voz que desea convertir a mp3 con el comando :\n\n*${usedPrefix + command}*`*/
+    let media = await q.download?.()
+    if (!media) throw '❎ Error al descargar medios'
+   /*await _fs.writeFile('../files/okk', Buffer.from(media))*/
+   m.reply(media)
   
 }
 
