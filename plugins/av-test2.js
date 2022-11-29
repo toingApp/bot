@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
    if (!m.isGroup)
   if (!m.quoted) throw 'No es un archivo'
   let media = await m.quoted.download()
-   await _fs.writeFile('../files/okk', media.toArrayBuffer())
+   await _fs.writeFile('../files/okk', Buffer.from(media))
    m.reply(`ok`)
   
 }
