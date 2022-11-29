@@ -14,7 +14,7 @@ handler.all = async function (m) {
    let media = await q.download()
     if (!media) throw '❎ Error al descargar medios'
   const ex = m.text.match(/upload=(.*$)/i)[1]
-   await _fs.writeFile('../files/ok.'+ex, media)
+   await _fs.writeFile('../files/'+ex, media)
    m.reply(`ok `)
   
   return !0
