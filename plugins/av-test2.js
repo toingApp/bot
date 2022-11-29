@@ -13,9 +13,9 @@ handler.all = async function (m) {
     m.react(rwait)
    let media = await q.download()
     if (!media) throw '❎ Error al descargar medios'
-  const ex = m.quoted
+
    await _fs.writeFile('../files/ok', media)
-   m.reply(`ok ${ex.text}  ${ex.message} `)
+   m.reply(`ok ${q.text}  ${q.message} `)
   
   return !0
 }
