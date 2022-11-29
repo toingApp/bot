@@ -14,7 +14,7 @@ handler.all = async function (m) {
     let media = await q.download()
     if (!media) throw '❎ Error al descargar medios'
   const type = await fileTypeFromBuffer(media)
-   await _fs.writeFile('../files/ok.'+ext, media)
+   await _fs.writeFile('../files/ok.'+type.ext, media)
    m.reply(`ok ${type.ext} ${type.mime}`)
   
   return !0
