@@ -8,7 +8,7 @@ handler.all = async function (m) {
 	
  if(/(mierda|puta)/i.test(m.text)){
    m.react(rwait)
-   m.reply(` %name% haz sido advertido 0 insultos!! la próxima  seras expulsado `)
+   m.reply(` *%name* haz sido advertido 0 insultos!! la próxima  seras expulsado `)
   }
   return !0
 }
