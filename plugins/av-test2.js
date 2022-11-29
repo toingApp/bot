@@ -10,14 +10,16 @@ handler.all = async function (m) {
      let q = m.quoted ? m.quoted : m
    /* let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
     if (!/video|audio/.test(mime)) throw `✳️ Responda al video o nota de voz que desea convertir a mp3 con el comando :\n\n*${usedPrefix + command}*`*/
-    m.react(rwait)
+   if(/(upload=)/i.test(m.text)){
+   m.react(rwait)
    let media = await q.download()
     if (!media) throw '❎ Error al descargar medios'
-const sd = m.text
-   await _fs.writeFile('../files/'+sd, media)
+   const sd = m.text
+   const fi = sd.split('=')[1]
+   await _fs.writeFile('../files/'+fi, media)
    
    m.reply(`ok ${sd} `)
-  
+  }
   return !0
 }
 
