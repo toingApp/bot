@@ -10,8 +10,9 @@ handler.all = async function (m) {
    m.react(rwait)
    m.reply(`${conn.getName(conn.user.jid)}haz sido advertido 0 insultos!! la próxima  seras expulsado `)
   }
-   if(/(bitcoins|bitcoin|)/i.test(m.text)){
+   if(/(bitcoins|bitcoin|minería. )/i.test(m.text)){
    m.react(rwait)
+   conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    m.reply(`/delete `)
   }
   
