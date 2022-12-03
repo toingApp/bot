@@ -1,6 +1,7 @@
 import OpenAIAPI from 'openaiapi'
 
 const OPENAI_API_KEY = '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'
+const openai = new OpenAIAPI(OPENAI_API_KEY)
 
 let handler = m => m
 handler.all = async function (m) {
@@ -16,7 +17,7 @@ handler.all = async function (m) {
   }
   
   if(/^ok/i.test(m.text)){
-  	const openai = new OpenAIAPI(OPENAI_API_KEY)
+  	
 
 openai.CompletionsCreate(m.text)
   .then(function(data) {
