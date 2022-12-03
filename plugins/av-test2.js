@@ -1,3 +1,5 @@
+const OpenAIAPI = require('../lib/openaiapi');
+
 import fs from 'fs'
 import path from 'path'
 const _fs= fs.promises
