@@ -1,4 +1,4 @@
-import {OpenAIAPI} from 'openaiapi'
+import {OpenAIAPI} from 'openai-api-node'
 
 const OPENAI_API_KEY = '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'
 const openai = new OpenAIAPI(OPENAI_API_KEY)
