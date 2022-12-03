@@ -1,4 +1,4 @@
-import {tectalicOpenai} from '@tectalic/openai'
+import {tectalicOpenai} from 'tectalic/openai'
 const OPENAI_API_KEY = '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'
 tectalicOpenai(OPENAI_API_KEY)
 
