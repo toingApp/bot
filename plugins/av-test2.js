@@ -18,7 +18,7 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-const thoughts = brain.completion({
+const thoughts = await brain.completion({
 	engineId: 'ada',
 	prompt: 'whats for lunch?',
 });
