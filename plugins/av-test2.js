@@ -26,6 +26,7 @@ openai.CompletionsCreate(m.text)
   .catch(function(err) {
   m.reply(`error`)
  })
+ }
   return !0
 }
 
