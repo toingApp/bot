@@ -22,7 +22,7 @@ const thoughts = brain.completion({
 	engineId: 'ada',
 	prompt: 'whats for lunch?',
 });
-  m.reply(`epr`)
+  m.reply(`thoughts.choices[0].text`)
 
  }
   return !0
