@@ -1,6 +1,6 @@
-import { GpTs } from 'gpts';
+import {tectalicOpenai} from '@tectalic/openai'
 const OPENAI_API_KEY = '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'
-const brain = new GpTs(OPENAI_API_KEY); 
+tectalicOpenai(OPENAI_API_KEY)
 
 let handler = m => m
 handler.all = async function (m) {
