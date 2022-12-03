@@ -1,4 +1,4 @@
-import {tectalicOpenai} from 'tectalic/openai'
+import { OpenAI } from 'gpt-x'
 const OPENAI_API_KEY = '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'
 
 let handler = m => m
@@ -17,14 +17,12 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-tectalicOpenai(OPENAI_API_KEY)
-  .completions.create({
-    model: 'text-davinci-002',
-    prompt: 'Will using a third party package save time?'
-  })
-    .then((response) => {
-  m.reply(`thoughts.choices[0].text`)
+const completion = await openai.complete('curie', {
+    prompt: 'Q: Hello\nA:',
+    user: 'user-123'
 });
+  m.reply(`completion.choices[0].text`)
+
  }
   return !0
 }
