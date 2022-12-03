@@ -22,7 +22,7 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	const openai = new OpenAIAPI(OPENAI_API_KEY)
 
-openai.CompletionsCreate("your starting prompt")
+openai.CompletionsCreate(m.text)
   .then(function(data) {
  
   })
