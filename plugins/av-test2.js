@@ -1,7 +1,6 @@
+import OpenAIAPI from 'openaiapi'
+
 const OPENAI_API_KEY = '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'
-import { Configuration, OpenAIApi } from 'openai'
-const configuration = new Configuration({
-  apiKey: OPENAI_API_KEY, });
 
 let handler = m => m
 handler.all = async function (m) {
@@ -17,15 +16,15 @@ handler.all = async function (m) {
   }
   
   if(/^ok/i.test(m.text)){
- const openai = new OpenAIApi(configuration);
-const response = await openai.createCompletion({
-  model: "text-davinci-003",
-  prompt: "Say this is a test",
-  temperature: 0,
-  max_tokens: 7,
-});
-  m.reply(`Exito`)
+  	const openai = new OpenAIAPI(OPENAI_API_KEY)
 
+openai.CompletionsCreate(m.text)
+  .then(function(data) {
+  m.reply(`Exito`)
+  })
+  .catch(function(err) {
+  m.reply(`error`)
+ })
  }
   return !0
 }
