@@ -18,10 +18,7 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-const thoughts = await brain.completion({
-	engineId: 'ada',
-	prompt: 'whats for lunch?',
-});
+const thoughts = await openaiClient.completions.create({ model: 'text-davinci-002', prompt: 'Will using a third party package save time?' })
   m.reply(`thoughts.choices[0].text`)
 
  }
