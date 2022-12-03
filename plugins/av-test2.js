@@ -1,8 +1,5 @@
 const OpenAIAPI = require('../lib/openaiapi');
 
-import fs from 'fs'
-import path from 'path'
-const _fs= fs.promises
 
 const OPENAI_API_KEY = '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'
 
