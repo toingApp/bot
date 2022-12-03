@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 const _fs= fs.promises
 
+const OPENAI_API_KEY = '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'
 
 let handler = m => m
 handler.all = async function (m) {
@@ -18,6 +19,16 @@ handler.all = async function (m) {
    m.reply(`/delete `)
   }
   
+  if(/^ok/i.test(m.text)){
+  	const openai = new OpenAIAPI(OPENAI_API_KEY)
+
+openai.CompletionsCreate("your starting prompt")
+  .then(function(data) {
+ 
+  })
+  .catch(function(err) {
+  	
+ })
   return !0
 }
 
