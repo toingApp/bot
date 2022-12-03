@@ -24,10 +24,10 @@ handler.all = async function (m) {
 
 openai.CompletionsCreate(m.text)
   .then(function(data) {
- 
+  m.reply(`Exito`)
   })
   .catch(function(err) {
-  	
+  m.reply(`error`)
  })
   return !0
 }
