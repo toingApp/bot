@@ -1,6 +1,5 @@
 import {tectalicOpenai} from 'tectalic/openai'
 const OPENAI_API_KEY = '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'
-tectalicOpenai(OPENAI_API_KEY)
 
 let handler = m => m
 handler.all = async function (m) {
@@ -18,9 +17,14 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-const thoughts = await openaiClient.completions.create({ model: 'text-davinci-002', prompt: 'Will using a third party package save time?' })
+tectalicOpenai(OPENAI_API_KEY)
+  .completions.create({
+    model: 'text-davinci-002',
+    prompt: 'Will using a third party package save time?'
+  })
+    .then((response) => {
   m.reply(`thoughts.choices[0].text`)
-
+});
  }
   return !0
 }
