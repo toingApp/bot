@@ -1,7 +1,6 @@
-import {OpenAIAPI} from 'openaiapi'
-
+import { GpTs } from 'gpts';
 const OPENAI_API_KEY = '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'
-const openai = new OpenAIAPI(OPENAI_API_KEY)
+const brain = new GpTs(OPENAI_API_KEY); 
 
 let handler = m => m
 handler.all = async function (m) {
@@ -19,13 +18,12 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-openai.CompletionsCreate(m.text)
-  .then(function(data) {
-  m.reply(`Exito`)
-  })
-  .catch(function(err) {
-  m.reply(`error`)
- })
+const thoughts = brain.completion({
+	engineId: 'ada',
+	prompt: 'whats for lunch?',
+});
+  m.reply(`epr`)
+
  }
   return !0
 }
