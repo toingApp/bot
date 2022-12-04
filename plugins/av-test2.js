@@ -33,14 +33,7 @@ var url = "https://api.openai.com/v1/completions";
      }};
 
   var data = `{
-      "model": "text-davinci-003"
-    "prompt": "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hola, como estas?\nAI:",
-    "temperature": 0.9,
-   "max_tokens": 150, 
-   "top_p": 1, 
-  "frequency_penalty": 0.0,
- "presence_penalty": 0.6,
- "stop": [" Human:", " AI:"]
+"model": "text-davinci-003", "prompt": "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: Hola", "temperature": 0.9, "max_tokens": 150, "top_p": 1, "frequency_penalty": 0, "presence_penalty": 0.6, "stop": [" Human:", " AI:"]
   }`;
 
   xhr.send(data);
