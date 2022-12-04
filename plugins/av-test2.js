@@ -34,7 +34,7 @@ var url = "https://api.openai.com/v1/completions";
 
   var data = `{
     "prompt": "buenos días",
-    "temperature": 0,
+    "temperature": 2.0,
     "max_tokens": 200,
     "model": "text-davinci-003"
   }`;
