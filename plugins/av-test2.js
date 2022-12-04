@@ -23,19 +23,20 @@ var url = "https://api.openai.com/v1/completions";
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Authorization", "Bearer sk-G2fr5iIPUrekLDAX1WvT3BlbkFJtQ3Lps3Rg4crsDpq3Etz");
-   xhr.onreadystatechange = function () {
+ //xhr.setRequestHeader("GT-TUNNEL",// "org-EU9Vj3AsCkYQYC7FEuubwINk");
+  xhr.onreadystatechange = function () {
      if (xhr.readyState === 4) {
         console.log(xhr.status);
         console.log(xhr.responseText);
         open_ai_response = xhr.responseText;
         console.log(open_ai_response);
      }};
-
+ 
   var data = `{
     "prompt": "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hola",
     "temperature": 0.9,
     "max_tokens": 150,
-    "model": "text-davinci-003" 
+    "model": "text-davinci-003",
     "top_p": 1,
     "frequency_penalty": 0,
     "presence_penalty": 0.6,
