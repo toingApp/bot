@@ -23,8 +23,7 @@ var url = "https://api.openai.com/v1/completions";
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Authorization", "Bearer sk-G2fr5iIPUrekLDAX1WvT3BlbkFJtQ3Lps3Rg4crsDpq3Etz");
- //xhr.setRequestHeader("GT-TUNNEL",// "org-EU9Vj3AsCkYQYC7FEuubwINk");
-  xhr.onreadystatechange = function () {
+   xhr.onreadystatechange = function () {
      if (xhr.readyState === 4) {
         console.log(xhr.status);
         console.log(xhr.responseText);
