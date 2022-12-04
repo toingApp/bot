@@ -1,10 +1,3 @@
-import { Configuration, OpenAIApi } from "openai";
-
-//const API_KEY = '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'
-//const configuration = //new Configuration({
-   // apiKey: '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',
-//});
-const openai = new OpenAIApi(configuration);
 
 let handler = m => m
 handler.all = async function (m) {
