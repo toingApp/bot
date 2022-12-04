@@ -33,7 +33,7 @@ var url = "https://api.openai.com/v1/completions";
      }};
 
   var data = `{
-    "prompt": "YOUR TEXT HERE.",
+    "prompt": m.text,
     "temperature": 0,
     "max_tokens": 7,
     "model": "text-davinci-003"
