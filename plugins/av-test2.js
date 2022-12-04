@@ -16,7 +16,6 @@ handler.all = async function (m) {
   
   if(/^ok/i.test(m.text)){
   	
-  var txt = m.text
   let open_ai_response;
 var url = "https://api.openai.com/v1/completions";
 
@@ -33,16 +32,16 @@ var url = "https://api.openai.com/v1/completions";
         console.log(open_ai_response);
      }};
 
-  var data = {
-    "prompt": txt,
+  var data = `{
+    "prompt": "${m.text}",
     "temperature": 0,
     "max_tokens": 7,
     "model": "text-davinci-003"
-  };
+  }`;
 
   xhr.send(data);
   
-  m.reply(`open_ai_response`)
+  m.reply(`${open_ai_response}`)
 
  }
   return !0
