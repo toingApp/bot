@@ -23,11 +23,13 @@ handler.all = async function (m) {
   	
 
 
-const response = await openai.createCompletion({
-  model: "text-davinci-003",
-  prompt: "Say this is a test",
-  temperature: 0,
-  max_tokens: 7,
+const response = await openai.createCompletion("text-davinci-002", {
+prompt: "hello",
+temperature: 0.7,
+max_tokens: 64,
+top_p: 1,
+frequency_penalty: 0,
+presence_penalty: 0,
 });
   m.reply(`ok`)
 
