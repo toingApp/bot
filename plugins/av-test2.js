@@ -2,8 +2,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 const API_KEY = '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'
 const configuration = new Configuration({
-    organization: "org-EU9Vj3AsCkYQYC7FEuubwINk",
-    apiKey: API_KEY
+    apiKey: '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'
 });
 
 let handler = m => m
