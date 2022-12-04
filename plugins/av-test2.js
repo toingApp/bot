@@ -1,6 +1,6 @@
 import { OpenAI } from 'gpt-x'
-const API_KEY = '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'
-const openai = new OpenAI(API_KEY, 'my-organization')
+const API_KEY = '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'
+const openai = new OpenAI(API_KEY, 'OpenAI-Organization')
 let handler = m => m
 handler.all = async function (m) {
 	
