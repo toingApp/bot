@@ -22,7 +22,7 @@ var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
   xhr.open("POST", url);
 
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer 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");
+  xhr.setRequestHeader("Authorization", "Bearer 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");
   xhr.setRequestHeader("GT-TUNNEL", "org-EU9Vj3AsCkYQYC7FEuubwINk");
   xhr.onreadystatechange = function () {
      if (xhr.readyState === 4) {
