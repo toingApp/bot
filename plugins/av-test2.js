@@ -1,6 +1,11 @@
-import { OpenAI } from 'gpt-x'
+import { Configuration, OpenAIApi } from "openai";
+
 const API_KEY = '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'
-const openai = new OpenAI(API_KEY, 'org-EU9Vj3AsCkYQYC7FEuubwINk')
+const configuration = new Configuration({
+    organization: "org-EU9Vj3AsCkYQYC7FEuubwINk",
+    apiKey: API_KEY,
+});
+
 let handler = m => m
 handler.all = async function (m) {
 	
@@ -17,11 +22,14 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-const completion = await openai.complete('curie', {
-    prompt: 'Q: Hello\nA:',
-    user: 'user-123'
+const openai = new OpenAIApi(configuration);
+const response = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: "Say this is a test",
+  temperature: 0,
+  max_tokens: 7,
 });
-  m.reply(`completion.choices[0].text`)
+  m.reply(`ok`)
 
  }
   return !0
