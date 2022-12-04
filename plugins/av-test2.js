@@ -41,7 +41,7 @@ var url = "https://api.openai.com/v1/completions";
 
   xhr.send(data);
   
-  m.reply(ok}`)
+  m.reply(`ok`)
 
  }
   return !0
