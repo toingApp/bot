@@ -13,21 +13,7 @@ handler.all = async function (m) {
   }
   
   if(/^ok/i.test(m.text)){
-  	
-
-
-openai_test();
-  m.reply(`ok`)
-
- }
-  return !0
-}
-
-let open_ai_response;
-
-async function openai_test() {
-  
-  var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
+var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
@@ -53,6 +39,18 @@ async function openai_test() {
   }`;
 
   xhr.send(data);
+  
+  m.reply(`ok`)
+
+ }
+  return !0
+}
+
+let open_ai_response;
+
+async function openai_test() {
+  
+  
 }
 
 export default handler
