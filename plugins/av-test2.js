@@ -22,7 +22,7 @@ var url = "https://api.openai.com/v1/completions";
   xhr.open("POST", url);
 
   xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.setRequestHeader("Authorization", "Bearer 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");
+  xhr.setRequestHeader("Authorization", "Bearer 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");
  xhr.setRequestHeader("GT-TUNNEL", "org-EU9Vj3AsCkYQYC7FEuubwINk");
   xhr.onreadystatechange = function () {
      if (xhr.readyState === 4) {
