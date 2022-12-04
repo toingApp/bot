@@ -4,6 +4,7 @@ const API_KEY = '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'
 const configuration = new Configuration({
     apiKey: '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',
 });
+const openai = new OpenAIApi(configuration);
 
 let handler = m => m
 handler.all = async function (m) {
@@ -21,7 +22,7 @@ handler.all = async function (m) {
   if(/^ok/i.test(m.text)){
   	
 
-const openai = new OpenAIApi(configuration);
+
 const response = await openai.createCompletion({
   model: "text-davinci-003",
   prompt: "Say this is a test",
