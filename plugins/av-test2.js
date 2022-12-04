@@ -1,4 +1,5 @@
-
+import {XMLHttpRequest} from 'xhr2'
+var xhr = new XMLHttpRequest()
 let handler = m => m
 handler.all = async function (m) {
 	
@@ -17,7 +18,6 @@ handler.all = async function (m) {
   let open_ai_response;
 var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
-  var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
 
   xhr.setRequestHeader("Content-Type", "application/json");
