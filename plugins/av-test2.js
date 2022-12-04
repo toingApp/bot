@@ -1,9 +1,9 @@
 import { Configuration, OpenAIApi } from "openai";
 
-const API_KEY = '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'
-const configuration = new Configuration({
-    apiKey: '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',
-});
+//const API_KEY = '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'
+//const configuration = //new Configuration({
+   // apiKey: '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',
+//});
 const openai = new OpenAIApi(configuration);
 
 let handler = m => m
@@ -23,18 +23,43 @@ handler.all = async function (m) {
   	
 
 
-const response = await openai.createCompletion("text-davinci-002", {
-prompt: "hello",
-temperature: 0.7,
-max_tokens: 64,
-top_p: 1,
-frequency_penalty: 0,
-presence_penalty: 0,
-});
+openai_test();
   m.reply(`ok`)
 
  }
   return !0
+}
+
+let open_ai_response;
+
+async function openai_test() {
+  
+  var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url);
+
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader("Authorization", "Bearer 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");
+
+  xhr.onreadystatechange = function () {
+     if (xhr.readyState === 4) {
+        console.log(xhr.status);
+        console.log(xhr.responseText);
+        open_ai_response = xhr.responseText;
+        console.log(open_ai_response);
+     }};
+
+  var data = `{
+    "prompt": "YOUR TEXT HERE.",
+    "temperature": 0.7,
+    "max_tokens": 256,
+    "top_p": 1,
+    "frequency_penalty": 0.75,
+    "presence_penalty": 0
+  }`;
+
+  xhr.send(data);
 }
 
 export default handler
