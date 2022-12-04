@@ -13,6 +13,8 @@ handler.all = async function (m) {
   }
   
   if(/^ok/i.test(m.text)){
+  	
+  let open_ai_response;
 var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
   var xhr = new XMLHttpRequest();
@@ -46,11 +48,8 @@ var url = "https://api.openai.com/v1/engines/text-davinci-002/completions";
   return !0
 }
 
-let open_ai_response;
 
-async function openai_test() {
-  
-  
-}
+
+
 
 export default handler
