@@ -1,4 +1,5 @@
-import {XMLHttpRequest} from 'xhr2'
+import pkg from 'xhr2';
+const {XMLHttpRequest} = pkg;
 var xhr = new XMLHttpRequest()
 let handler = m => m
 handler.all = async function (m) {
